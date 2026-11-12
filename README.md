@@ -166,10 +166,18 @@ Attributes:
    - **Yes.** The reference diagram shows a many-to-many relationship.
 
 9. Can a **PROFESSOR** teach zero **SECTIONS**?
-   - **No.** The reference diagram requires each professor to teach at least one section.
+   - **Yes.** A professor may teach zero or more sections.
 
 10. Can a **PROFESSOR** teach multiple **SECTIONS**?
     - **Yes.** A professor can teach multiple sections.
 
 11. Can a **SECTION** exist without a **PROFESSOR**?
     - **No.** Each section is taught by exactly one professor.
+
+
+
+## 4. Entity Relationship Diagram
+
+The following diagram illustrates the entities and relationships in the school database.
+
+![School ER Diagram](School_ER_Diagram.drawio.png)
