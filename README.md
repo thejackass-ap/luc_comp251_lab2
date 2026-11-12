@@ -54,3 +54,122 @@ Once you complete both items above, submit the link to your repository for lab 2
 - [Make a ReadMe file Web-based Editor](https://www.makeareadme.com/)
 - [Draw.io Web-based diagramming tool](https://app.diagrams.net/)
 - [Creating Entity Relationship Diagrams using Draw.io](https://www.youtube.com/watch?v=lAtCySGDD48)
+
+
+
+
+---
+
+# Lab 2 - School Database ER Model
+
+## 1. Entities and Attributes
+
+### STUDENT
+Represents a student enrolled at the school.
+
+Attributes:
+- student_id (Primary Key)
+- student_name
+- student_address
+
+### SEAT
+Represents a seat assigned to a student.
+
+Attributes:
+- seat_no (Primary Key)
+- seat_position
+
+### INSTRUCTOR
+Represents an instructor who teaches courses.
+
+Attributes:
+- instructor_no (Primary Key)
+- instructor_name
+- instructor_faculty
+
+### COURSE
+Represents a course offered by the school.
+
+Attributes:
+- course_name (Primary Key component)
+- course_number (Primary Key component)
+
+### SECTION
+Represents a section of a course.
+
+Attributes:
+- section_number (Primary Key)
+
+### PROFESSOR
+Represents a professor who teaches sections.
+
+Attributes:
+- professor_id (Primary Key)
+- professor_name
+- professor_faculty
+
+
+
+## 2. Entity Relationships
+
+### STUDENT and SEAT
+- A **STUDENT** <u>fills</u> exactly one **SEAT**.
+- A **SEAT** <u>is filled by</u> exactly one **STUDENT**.
+- Cardinality: One-to-One (1:1).
+
+### STUDENT and COURSE
+- A **STUDENT** <u>takes</u> one or more **COURSES**.
+- A **COURSE** <u>is taken by</u> one or more **STUDENTS**.
+- Cardinality: Many-to-Many (M:N).
+
+### INSTRUCTOR and COURSE
+- An **INSTRUCTOR** <u>teaches</u> one or more **COURSES**.
+- A **COURSE** <u>is taught by</u> exactly one **INSTRUCTOR**.
+- Cardinality: One-to-Many (1:M).
+
+### COURSE and SECTION
+- A **COURSE** <u>has</u> one or more **SECTIONS**.
+- A **SECTION** <u>belongs to</u> one or more **COURSES**.
+- Cardinality: Many-to-Many (M:N).
+
+### PROFESSOR and SECTION
+- A **PROFESSOR** <u>teaches</u> zero or more **SECTIONS**.
+- A **SECTION** <u>is taught by</u> exactly one **PROFESSOR**.
+- Cardinality: One-to-Many (1:M).
+
+
+
+## 3. Assumptions
+
+1. Can a **STUDENT** fill more than one **SEAT**?
+   - **No.** Each student fills exactly one seat.
+
+2. Can a **SEAT** be assigned to multiple **STUDENTS**?
+   - **No.** Each seat is filled by exactly one student.
+
+3. Can a **STUDENT** take multiple **COURSES**?
+   - **Yes.** A student takes one or more courses.
+
+4. Can a **COURSE** have multiple **STUDENTS**?
+   - **Yes.** A course can be taken by multiple students.
+
+5. Can an **INSTRUCTOR** teach multiple **COURSES**?
+   - **Yes.** An instructor teaches one or more courses.
+
+6. Can a **COURSE** be taught by multiple **INSTRUCTORS**?
+   - **No.** Each course is taught by exactly one instructor.
+
+7. Can a **COURSE** have multiple **SECTIONS**?
+   - **Yes.** A course has one or more sections.
+
+8. Can a **SECTION** belong to multiple **COURSES**?
+   - **Yes.** The reference diagram shows a many-to-many relationship.
+
+9. Can a **PROFESSOR** teach zero **SECTIONS**?
+   - **No.** The reference diagram requires each professor to teach at least one section.
+
+10. Can a **PROFESSOR** teach multiple **SECTIONS**?
+    - **Yes.** A professor can teach multiple sections.
+
+11. Can a **SECTION** exist without a **PROFESSOR**?
+    - **No.** Each section is taught by exactly one professor.
